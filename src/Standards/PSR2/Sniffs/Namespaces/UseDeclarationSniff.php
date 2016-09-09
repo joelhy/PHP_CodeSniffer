@@ -57,7 +57,7 @@ class UseDeclarationSniff implements Sniff
 
         // Only one USE declaration allowed per statement.
         $next = $phpcsFile->findNext(array(T_COMMA, T_SEMICOLON, T_OPEN_USE_GROUP), ($stackPtr + 1));
-        if ($tokens[$next]['code'] !== T_SEMICOLON) {
+        /*if ($tokens[$next]['code'] !== T_SEMICOLON) {
             $error = 'There must be one USE keyword per declaration';
             $fix   = $phpcsFile->addFixableError($error, $stackPtr, 'MultipleDeclarations');
             if ($fix === true) {
@@ -109,7 +109,7 @@ class UseDeclarationSniff implements Sniff
                     $phpcsFile->fixer->endChangeset();
                 }//end if
             }//end if
-        }//end if
+        }//end if*/
 
         // Make sure this USE comes after the first namespace declaration.
         $prev = $phpcsFile->findPrevious(T_NAMESPACE, ($stackPtr - 1));

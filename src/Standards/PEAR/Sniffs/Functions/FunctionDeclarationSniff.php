@@ -372,7 +372,7 @@ class FunctionDeclarationSniff implements Sniff
 
         // The opening brace needs to be one space away from the closing parenthesis.
         $opener = $tokens[$stackPtr]['scope_opener'];
-        if ($tokens[$opener]['line'] !== $tokens[$closeBracket]['line']) {
+        /*if ($tokens[$opener]['line'] !== $tokens[$closeBracket]['line']) {
             $error = 'The closing parenthesis and the opening brace of a multi-line function declaration must be on the same line';
             $fix   = $phpcsFile->addFixableError($error, $opener, 'NewlineBeforeOpenBrace');
             if ($fix === true) {
@@ -403,7 +403,7 @@ class FunctionDeclarationSniff implements Sniff
 
                 return;
             }//end if
-        }//end if
+        }//end if*/
 
     }//end processMultiLineDeclaration()
 
